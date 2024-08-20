@@ -22,7 +22,6 @@ stages:
           inputs:
             provider: 'azurerm'
             command: 'init'
-            workingDirectory: '$(System.DefaultWorkingDirectory)/todoapp_infra'
             backendServiceArm: 'devops-app'
             backendAzureRmResourceGroupName: 'shreerg'
             backendAzureRmStorageAccountName: 'shreestorage1234'
@@ -56,7 +55,7 @@ stages:
         inputs:
           provider: 'azurerm'
           command: 'init'
-          workingDirectory: '$(System.DefaultWorkingDirectory)/todoapp_infra'
+          workingDirectory: '$(System.DefaultWorkingDirectory)'
           backendServiceArm: 'devops-app'
           backendAzureRmResourceGroupName: 'shreerg'
           backendAzureRmStorageAccountName: 'shreestorage1234'
