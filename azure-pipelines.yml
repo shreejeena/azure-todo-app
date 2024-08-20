@@ -1,0 +1,18 @@
+trigger: none
+pool: default
+parameters:
+  - name: Environment
+    displayName: Environment
+    type: string
+    values:
+    - QA
+      Dev
+stages:
+  - stage: Terraformplan
+    displayName: Terraform plan
+    jobs:
+      - job: Terraforminit
+        displayName: Terraforminit
+        pool: default
+        steps:
+        
