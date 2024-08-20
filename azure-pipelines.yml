@@ -38,6 +38,7 @@ stages:
     jobs: 
     - job: Manualapproval
       displayName: Manual approval
+      pool: server
       steps:
       - task: ManualValidation@1
         inputs:
@@ -47,6 +48,7 @@ stages:
     - job: Terraformapply
       dependsOn: Manualapproval
       displayName: Terraformapply
+      pool: Default
       steps:
       - task: TerraformTaskV4@4
         displayName: Terraforminit
