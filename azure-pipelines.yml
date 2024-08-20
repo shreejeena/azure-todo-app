@@ -16,17 +16,15 @@ stages:
         displayName: Terraforminit
         pool: default
         steps:
-        
         - task: TerraformTaskV4@4
-          displayName: Terraforminit
           inputs:
             provider: 'azurerm'
             command: 'init'
+            workingDirectory: '$(System.DefaultWorkingDirectory)/todoapp_infra'
             backendServiceArm: 'devops-app'
             backendAzureRmResourceGroupName: 'shreerg'
             backendAzureRmStorageAccountName: 'shreestorage1234'
             backendAzureRmContainerName: 'state'
-            backendAzureRmKey: 'to-do-state'
         - task: TerraformTaskV4@4
           displayName: Terraform plan
           inputs:
@@ -55,7 +53,7 @@ stages:
         inputs:
           provider: 'azurerm'
           command: 'init'
-          workingDirectory: '$(System.DefaultWorkingDirectory)'
+          workingDirectory: '$(System.DefaultWorkingDirectory)/todoapp_infra'
           backendServiceArm: 'devops-app'
           backendAzureRmResourceGroupName: 'shreerg'
           backendAzureRmStorageAccountName: 'shreestorage1234'
