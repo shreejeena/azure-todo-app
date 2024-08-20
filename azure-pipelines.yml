@@ -32,6 +32,7 @@ stages:
           inputs:
             provider: 'azurerm'
             command: 'plan'
+            commandOptions: '-destroy'
             environmentServiceNameAzureRM: 'devops-app'
   - stage: Terraformapply
     displayName: Terraformapply
