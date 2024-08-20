@@ -16,6 +16,7 @@ stages:
         displayName: Terraforminit
         pool: default
         steps:
+        
         - task: TerraformTaskV4@4
           displayName: Terraforminit
           inputs:
