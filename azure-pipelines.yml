@@ -67,4 +67,5 @@ stages:
         inputs:
           provider: 'azurerm'
           command: 'apply'
+          commandOptions: 'destroy'
           environmentServiceNameAzureRM: 'devops-app'
