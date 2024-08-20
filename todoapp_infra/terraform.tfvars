@@ -1,13 +1,13 @@
 rgs = {
-  rg-devopsinsiders = {
-    location = "West Europe"
+  rg-shree = {
+    location = "Central India"
   }
 }
 
 vnets_subnets = {
-  vnet-devopsinsiders = {
-    location            = "West Europe"
-    resource_group_name = "rg-devopsinsiders"
+  vnet-shree = {
+    location            = "Central India"
+    resource_group_name = "rg-shree"
     address_space       = ["10.0.0.0/16"]
     # The AzureBastionSubnet Block is required in subnets if enable_bastion=true 
     # AzureBastionSubnet = {
@@ -30,9 +30,9 @@ vnets_subnets = {
 
 vms = {
   "frontendvm" = {
-    resource_group_name = "rg-devopsinsiders"
-    location            = "West Europe"
-    vnet_name           = "vnet-devopsinsiders"
+    resource_group_name = "rg-shree"
+    location            = "Central India"
+    vnet_name           = "vnet-shree"
     subnet_name         = "frontend-subnet"
     size                = "Standard_DS1_v2"
     admin_username      = "devopsadmin"
@@ -48,9 +48,9 @@ vms = {
     enable_public_ip = true
   }
   "backendvm" = {
-    resource_group_name = "rg-devopsinsiders"
-    location            = "West Europe"
-    vnet_name           = "vnet-devopsinsiders"
+    resource_group_name = "rg-shree"
+    location            = "Central India"
+    vnet_name           = "vnet-shree"
     subnet_name         = "backend-subnet"
     size                = "Standard_DS1_v2"
     admin_username      = "devopsadmin"
@@ -68,9 +68,9 @@ vms = {
 }
 
 loadbalancers = {
-  lb-devopsinsiders = {
-    location                       = "West Europe"
-    resource_group_name            = "rg-devopsinsiders"
+  lb-shree = {
+    location                       = "Central India"
+    resource_group_name            = "rg-shree"
     frontend_ip_configuration_name = "PublicIPAddress"
     sku                            = "Standard"
   }
@@ -79,15 +79,15 @@ loadbalancers = {
 backend_pools = {
   frontend-pool = {
     port        = 80
-    lb_name     = "lb-devopsinsiders"
+    lb_name     = "lb-shree"
     backend_vms = ["frontendvm1", "frontendvm2"]
   }
 }
 
 servers_dbs = {
   "devopsinssrv1" = {
-    resource_group_name            = "rg-devopsinsiders"
-    location                       = "West Europe"
+    resource_group_name            = "rg-shree"
+    location                       = "Central India"
     version                        = "12.0"
     administrator_login            = "devopsadmin"
     administrator_login_password   = "P@ssw01rd@123"
