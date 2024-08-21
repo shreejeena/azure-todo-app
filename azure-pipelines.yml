@@ -28,6 +28,7 @@ stages:
             backendAzureRmResourceGroupName: 'shreerg'
             backendAzureRmStorageAccountName: 'shreestorage1234'
             backendAzureRmContainerName: 'state'
+            backendAzureRmKey: 'statefile'
         - task: TerraformTaskV4@4
           displayName: Terraform plan
           inputs:
