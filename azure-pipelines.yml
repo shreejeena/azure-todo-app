@@ -18,13 +18,12 @@ stages:
         steps:
         - task: TerraformInstaller@1
           inputs:
-            terraformVersion: 'latest'
+            terraformVersion: '3.85.0'
         - task: TerraformTaskV4@4
           inputs:
             provider: 'azurerm'
             command: 'init'
             workingDirectory: '$(System.DefaultWorkingDirectory)/todoapp_infra'
-            commandOptions: '-upgrade'
             backendServiceArm: 'devops-app'
             backendAzureRmResourceGroupName: 'shreerg'
             backendAzureRmStorageAccountName: 'shreestorage1234'
@@ -60,7 +59,6 @@ stages:
           provider: 'azurerm'
           command: 'init'
           workingDirectory: '$(System.DefaultWorkingDirectory)/todoapp_infra'
-          commandOptions: '-upgrade'
           backendServiceArm: 'devops-app'
           backendAzureRmResourceGroupName: 'shreerg'
           backendAzureRmStorageAccountName: 'shreestorage1234'
