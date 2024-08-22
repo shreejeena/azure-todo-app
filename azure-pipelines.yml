@@ -16,9 +16,6 @@ stages:
         displayName: Terraforminit
         pool: default
         steps:
-        - task: TerraformInstaller@1
-          inputs:
-            terraformVersion: '3.85.0'
         - task: TerraformTaskV4@4
           inputs:
             provider: 'azurerm'
