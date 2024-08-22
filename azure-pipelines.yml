@@ -34,6 +34,7 @@ stages:
           inputs:
             provider: 'azurerm'
             command: 'plan'
+            workingDirectory: '$(System.DefaultWorkingDirectory)todoapp_infra'
             environmentServiceNameAzureRM: 'devops-app'
   - stage: Terraformapply
     displayName: Terraformapply
