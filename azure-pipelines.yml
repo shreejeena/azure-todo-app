@@ -21,6 +21,7 @@ stages:
             provider: 'azurerm'
             command: 'init'
             workingDirectory: '$(System.DefaultWorkingDirectory)/todoapp_infra'
+            commandOptions: 'rm .terraform.lock.hcl'
             backendServiceArm: 'devops-app'
             backendAzureRmResourceGroupName: 'shreerg'
             backendAzureRmStorageAccountName: 'shreestorage1234'
