@@ -71,4 +71,5 @@ stages:
         inputs:
           provider: 'azurerm'
           command: 'apply'
+          workingDirectory: '$(System.DefaultWorkingDirectory)/todoapp_infra'
           environmentServiceNameAzureRM: 'devops-app'
